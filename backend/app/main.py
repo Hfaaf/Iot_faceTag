@@ -4,7 +4,7 @@ from app.database import init_db
 app = FastAPI(title="FaceTag API")
 
 
-@app.on_event("startup")
+@app.lifespan("startup")
 def startup():
     init_db()
 
